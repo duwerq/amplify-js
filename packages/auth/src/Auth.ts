@@ -585,7 +585,7 @@ export default class AuthClass {
 		authDetails: AuthenticationDetails
 	): Promise<CognitoUser | any> {
 		const user = this.createCognitoUser(authDetails.getUsername());
-		user.setAuthenticationFlowType('CUSTOM_AUTH');
+
 
 		return new Promise((resolve, reject) => {
 			user.initiateAuth(authDetails, this.authCallbacks(user, resolve, reject));
